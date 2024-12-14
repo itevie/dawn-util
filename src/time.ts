@@ -45,14 +45,6 @@ export class DawnTime {
     return result;
   }
 
-  public toString(ignore?: Unit[]) {
-    let result = "";
-    for (const i in this.units)
-      if (this.units[i as Unit] > 0 && !ignore?.includes(i as Unit))
-        result += `${this.units[i as Unit]} ${i} `;
-    return result.trim();
-  }
-
   get biggestUnit(): Unit | null {
     for (const i in this.units) {
       if (this.units[i as Unit] !== 0) return i as Unit;
@@ -77,7 +69,15 @@ export class DawnTime {
     return format;
   }
 
-  public static fromString(timeString: string): DawnTime | null {
+  public toUnitString(ignore?: Unit[]) {
+    let result = "";
+    for (const i in this.units)
+      if (this.units[i as Unit] > 0 && !ignore?.includes(i as Unit))
+        result += `${this.units[i as Unit]} ${i} `;
+    return result.trim();
+  }
+
+  public static fromUnitString(timeString: string): DawnTime | null {
     let time = new DawnTime(0);
 
     while (timeString.length > 0) {

@@ -1,3 +1,5 @@
-import * as Time from "./src/Time";
+import * as time from "./src/time";
+import * as quick from "./src/quick";
+import * as files from "./src/files";
 
-export { Time };
+export { time, quick, files };
