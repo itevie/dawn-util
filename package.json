@@ -1,6 +1,6 @@
 {
   "name": "@itevie/util",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of utility functions for my projects",
   "main": "index.ts",
   "scripts": {
