@@ -16,7 +16,7 @@ export const quantifiers = {
   ms: ["ms"],
 };
 
-export class DawnTime {
+export default class DawnTime {
   public units: Record<Unit, number> = {
     day: 0,
     hour: 0,
